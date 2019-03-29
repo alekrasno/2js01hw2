@@ -11,26 +11,135 @@
 			var A = parseInt(a); 
 			var B = parseInt(b);
 			var C; 
-			
 			if ((A >= 0)&&(B >= 0)) {
 				C = Math.abs(A - B);
 				alert('Числа положительные, разность равна ' + C);
 			} else if ((A < 0)&&(B < 0)) {
 				C = A * B;
-				console.log(A);
-				console.log(B);
-				console.log(C);
 				alert('Числа отрицательные, произведение равно ' + C);
 			} else if ((A < 0)&&(B >= 0) || (A >= 0)&&(B < 0)) {
 				C = A + B;
 				alert('Числа разнозначные, их сумма равна ' + C);
-			}	else	{
-				alert('Что-то с числами не так! Повторяем')
-				window.location.reload();
+			}	else {
+				alert('Что-то с числами не так! Повторяем');
+				window.location.reload();				
 			}
 
 // ----- Задача 4
+			var lim = 15; // Верхний предел
+			var a =+ prompt ('Введите число 1..'+ lim);
+			if ((a < 1) || (a > lim) || (isNaN(a))) {
+				alert ('Введены неверные данные. Повторите');
+				window.location.reload();				
+			}
+			switch (a) {
+				case a : for (i = a; i <= lim; i++) {
+							console.log (a++);
+						}
+			}
 			
+// ----- Задача 5
+			var a;
+			var b;
+			var C; 
+			var Sum = function(x, y)	{ // Функция сложения
+				return(x + y);
+			};
+			var Sub = function(x, y)	{ // Функция вычитания
+				return(x - y);
+			};
+			var Mul = function(x, y)	{ // Функция умножения
+				return(x * y);
+			};
+			var Div = function(x, y)	{ // Функция деления
+				return(x / y);
+			};
+//===================================================
+			a =+ prompt('Введите первое число');
+			b =+ prompt('Введите второе число');
+			alert('Арифметика введенных чисел:\nСумма ' + Sum(a, b) + "\n" +
+			'Разность ' + Sub(a, b) + "\n" +
+			'Произведение ' + Mul(a, b) + "\n" +
+			'Частное ' + Div(a, b));
+			
+// ----- Задача 6
+			var a;
+			var b;
+			var c; 
+			var Sum = function(x, y)	{ // Функция сложения
+				return(x + y);
+			};
+			var Sub = function(x, y)	{ // Функция вычитания
+				return(x - y);
+			};
+			var Mul = function(x, y)	{ // Функция умножения
+				return(x * y);
+			};
+			var Div = function(x, y)	{ // Функция деления
+				return(x / y);
+			};
+			var mathOperation = function(x, y, z)	{  // Функция с тремя операторами
+				switch(y) {
+					case '+': // Сложение
+						return(Sum(x, z));
+						break;
+					case '-': // Вычитание
+						return(Sub(x, z));
+						break;	
+					case '*': // Умножение
+						return(Mul(x, z));
+						break;	
+					case '/': // Деление
+						return(Div(x, z));
+						break;	
+					default: {
+						alert('Арифметическое действие не определено');
+						
+					}	
+				}
+			};
+//===================================================
+			a =+ prompt('Первое число');
+			console.log(a);
+			c =+ prompt('Введите второе число');
+			console.log(c);
+			b = prompt('Действие');
+			console.log(b);
+			
+			alert(a +' '+ b +' '+ c + ' = ' + mathOperation(a, b, c));
+			
+// ----- Задача 7
+			var Zero = 0;
+			var Null = null;
+			var numZero	=+ Zero; 
+			var numNull	=+ Null;
+			console.log('0 в чистом виде имеет тип ' + typeof(Zero));
+			console.log('0 парсенный имеет тип ' + typeof(numZero));
+			console.log('null в чистом виде имеет тип ' + typeof(Null));
+			console.log('null парсенный имеет тип ' + typeof(numNull));
+			console.log('Сравниваем чистыми - ' + (Zero == Null));
+			console.log('Сравниваем парсенными - ' + (numZero == numNull));
+			
+// ----- Задача 8
+			var a = prompt('Введите число');
+			var b = prompt('Введите степень');
+			var c;
+			var oneStep = function(x, y)	{
+				if (y > 1)	{
+					console.log('x = ' + x + ', y = ' + y);
+					return(x * oneStep(x, y - 1));
+					//console.log('d = ' + d);
+				}	else if (y == 0)	{
+					return(1);
+				}	else 	{
+					return(x);
+				}
+			};
+//==================
+			c = oneStep(a, b);
+			alert(c);
+			//console.log(a, b);
+			//console.log(c);
 		</script>
 	</body>
 </html>	

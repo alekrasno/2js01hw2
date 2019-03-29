@@ -1,0 +1,36 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>JS-1. ДЗ-2</title>
+	</head>	
+	<body>
+		<script>
+// ----- Задача 3
+			var a = prompt('Введите первое число');
+			var b = prompt('Введите второе число');
+			var A = parseInt(a); 
+			var B = parseInt(b);
+			var C; 
+			
+			if ((A >= 0)&&(B >= 0)) {
+				C = Math.abs(A - B);
+				alert('Числа положительные, разность равна ' + C);
+			} else if ((A < 0)&&(B < 0)) {
+				C = A * B;
+				console.log(A);
+				console.log(B);
+				console.log(C);
+				alert('Числа отрицательные, произведение равно ' + C);
+			} else if ((A < 0)&&(B >= 0) || (A >= 0)&&(B < 0)) {
+				C = A + B;
+				alert('Числа разнозначные, их сумма равна ' + C);
+			}	else	{
+				alert('Что-то с числами не так! Повторяем')
+				window.location.reload();
+			}
+
+// ----- Задача 4
+			
+		</script>
+	</body>
+</html>	
